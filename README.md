@@ -1,16 +1,37 @@
-# React + Vite
+# Verdant Plant Shop Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Verdant**, a nature-inspired, eco-friendly plant store frontend built with **React + Vite**. This website provides a seamless experience for customers to browse, purchase, and track plants, while giving admins full control over plant inventory and order management. The frontend is fully connected to a **Spring Boot backend** and fetches **real-time data** for authentication, plant management, cart, and orders.
 
-Currently, two official plugins are available:
+🌿 **Theme:** Verdant – soft greens, earthy tones, gentle shadows, organic shapes, and nature-inspired animations.  
+💻 **Purpose:** To provide a modern, elegant, and eco-friendly e-commerce platform for plant enthusiasts. Customers can view plants, add to cart, place orders, and track order status, while admins can manage plants and orders effortlessly.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+### Authentication
+- Customer Signup & Login  
+- Admin Login (private link `/admin-login`)  
+- JWT token storage in `localStorage`  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Customer Features
+- View all plants  
+- Plant details page  
+- Add/remove plants to cart  
+- Place order  
+- View order history and status (Pending → Processed → Shipped → Delivered)  
+
+### Admin Features
+- Plant CRUD (Add, View, Update, Delete)  
+- View all orders  
+- Update order status  
+
+### UI / UX
+- Verdant nature-inspired design  
+- Rounded buttons, organic shapes, leaf shadows  
+- Soft animations: bloom, grow-up, sway, float  
+- Responsive & mobile-friendly  
+
+---
+
