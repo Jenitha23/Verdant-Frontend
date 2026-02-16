@@ -1,0 +1,294 @@
+@import '../styles/variables.css';
+
+.plant-details-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: calc(80px + var(--spacing-xl)) var(--spacing-xl) var(--spacing-xxl);
+}
+
+.plant-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  background: transparent;
+  color: var(--text-soft);
+  font-size: 1rem;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  border: 2px solid var(--cream);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+
+.back-btn:hover {
+  background: var(--cream);
+  color: var(--forest);
+  transform: translateX(-5px);
+}
+
+.plant-details-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xxl);
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xxl);
+  box-shadow: 0 20px 60px var(--shadow);
+}
+
+/* Image Section */
+.plant-image-section {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.plant-detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 400px;
+}
+
+/* Info Section */
+.plant-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.plant-detail-name {
+  font-size: 2.5rem;
+  color: var(--forest);
+  margin-bottom: var(--spacing-sm);
+}
+
+.plant-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--cream);
+}
+
+.plant-detail-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--moss);
+}
+
+.plant-detail-stock {
+  font-size: 1.1rem;
+  color: var(--text-soft);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+}
+
+.plant-detail-description {
+  line-height: 1.8;
+}
+
+.plant-detail-description h3 {
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--forest);
+}
+
+.plant-detail-description p {
+  color: var(--text-soft);
+  font-size: 1.1rem;
+}
+
+/* Purchase Section */
+.plant-purchase-section {
+  display: flex;
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--cream);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.quantity-btn {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  font-size: 1.5rem;
+  color: var(--forest);
+  transition: var(--transition);
+  border: none;
+}
+
+.quantity-btn:hover:not(:disabled) {
+  background: var(--cream);
+}
+
+.quantity-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.quantity-display {
+  width: 60px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.add-to-cart-detail-btn {
+  flex: 1;
+  background: var(--forest);
+  color: white;
+  padding: 0 var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  transition: var(--transition);
+}
+
+.add-to-cart-detail-btn:hover:not(:disabled) {
+  background: var(--moss);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.add-to-cart-detail-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-loader {
+  animation: spin 2s linear infinite;
+  display: inline-block;
+}
+
+/* Care Tips */
+.plant-care-tips {
+  background: var(--cream);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+}
+
+.plant-care-tips h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--forest);
+}
+
+.plant-care-tips ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plant-care-tips li {
+  padding: var(--spacing-xs) 0;
+  color: var(--text-soft);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Loading State */
+.plant-details-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+
+/* Error State */
+.plant-details-error {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: var(--bg);
+}
+
+.plant-details-error h2 {
+  font-size: 2rem;
+  color: var(--forest);
+  margin-bottom: var(--spacing-md);
+}
+
+.plant-details-error p {
+  color: var(--text-soft);
+  margin-bottom: var(--spacing-xl);
+  font-size: 1.1rem;
+}
+
+.back-home-btn {
+  background: var(--forest);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.back-home-btn:hover {
+  background: var(--moss);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .plant-details-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .plant-details-page {
+    padding: calc(80px + var(--spacing-md)) var(--spacing-md) var(--spacing-xl);
+  }
+
+  .plant-details-content {
+    padding: var(--spacing-lg);
+  }
+
+  .plant-detail-name {
+    font-size: 2rem;
+  }
+
+  .plant-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .plant-purchase-section {
+    flex-direction: column;
+  }
+
+  .quantity-selector {
+    width: 100%;
+  }
+
+  .add-to-cart-detail-btn {
+    height: 50px;
+  }
+}

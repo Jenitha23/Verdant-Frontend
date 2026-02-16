@@ -1,0 +1,47 @@
+@import './styles/variables.css';
+
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sage);
+  border-radius: var(--radius-lg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--moss);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--sage);
+  color: white;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus outline */
+:focus-visible {
+  outline: 3px solid var(--moss);
+  outline-offset: 2px;
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: var(--text-soft);
+  opacity: 0.5;
+}

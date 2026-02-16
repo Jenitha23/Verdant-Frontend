@@ -1,0 +1,115 @@
+@import '../styles/variables.css';
+
+.orders-page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: calc(80px + var(--spacing-xl)) var(--spacing-xl) var(--spacing-xxl);
+}
+
+.orders-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.orders-title {
+  font-size: 2.5rem;
+  color: var(--forest);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+/* No Orders */
+.no-orders {
+  text-align: center;
+  padding: var(--spacing-xxl);
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.no-orders-icon {
+  font-size: 5rem;
+  margin-bottom: var(--spacing-lg);
+  animation: float 4s ease-in-out infinite;
+}
+
+.no-orders h2 {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--forest);
+}
+
+.no-orders p {
+  color: var(--text-soft);
+  margin-bottom: var(--spacing-xl);
+  font-size: 1.1rem;
+}
+
+.shop-now-btn {
+  background: var(--forest);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.shop-now-btn:hover {
+  background: var(--moss);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+/* Orders List */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Loading State */
+.orders-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+
+/* Error State */
+.orders-error {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.orders-error p {
+  color: var(--error);
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .orders-page {
+    padding: calc(80px + var(--spacing-md)) var(--spacing-md) var(--spacing-xl);
+  }
+
+  .orders-title {
+    font-size: 2rem;
+  }
+
+  .no-orders {
+    padding: var(--spacing-xl);
+  }
+
+  .no-orders h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,138 @@
+:root {
+  /* Color Palette - Verdant Theme */
+  --sage: #A3B18A;
+  --moss: #588157;
+  --forest: #3A5A40;
+  --cream: #F5F3E7;
+  --terracotta: #D08C60;
+  --bg: #FAF9F6;
+  --text-soft: #5F6F65;
+  --white: #FFFFFF;
+  --shadow: rgba(58, 90, 64, 0.1);
+  --shadow-hover: rgba(58, 90, 64, 0.2);
+  --error: #d45e5e;
+  --success: #588157;
+  --warning: #f0b27a;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Nunito', sans-serif;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* Transitions */
+  --transition: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text-soft);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: var(--spacing-md);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* Animations */
+@keyframes bloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes grow-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(2deg);
+  }
+  66% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bloom {
+  animation: bloom 0.6s ease-out;
+}
+
+.grow-up {
+  animation: grow-up 0.8s ease-out;
+}
+
+.sway:hover {
+  animation: sway 2s ease-in-out infinite;
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}

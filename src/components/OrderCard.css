@@ -1,0 +1,127 @@
+@import '../styles/variables.css';
+
+.order-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: 0 5px 20px var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: var(--spacing-md);
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px var(--shadow-hover);
+}
+
+.order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--cream);
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.order-id {
+  font-size: 1.2rem;
+  color: var(--forest);
+  margin: 0;
+}
+
+.order-date {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.order-status {
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.status-processed {
+  background: var(--sage);
+  color: var(--forest);
+}
+
+.status-shipped {
+  background: var(--moss);
+  color: white;
+}
+
+.status-delivered {
+  background: var(--forest);
+  color: white;
+}
+
+.status-cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.order-card-body {
+  margin-bottom: var(--spacing-md);
+}
+
+.order-items-preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.order-item-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.item-name {
+  color: var(--text-soft);
+}
+
+.item-qty {
+  color: var(--forest);
+  font-weight: 600;
+}
+
+.more-items {
+  font-size: 0.9rem;
+  color: var(--moss);
+  font-style: italic;
+  margin-top: var(--spacing-xs);
+}
+
+.order-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--spacing-md);
+  border-top: 2px solid var(--cream);
+  font-size: 1.1rem;
+}
+
+.order-total-label {
+  color: var(--text-soft);
+}
+
+.order-total {
+  font-weight: 700;
+  color: var(--forest);
+  font-size: 1.2rem;
+}
