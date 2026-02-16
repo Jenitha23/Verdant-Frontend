@@ -5,6 +5,12 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
-    open: true
+    proxy: {
+      
+        target: 'verdant-ebg7bvcchea2fgg9.centralindia-01.azurewebsites.net',
+        changeOrigin: true,
+        secure: false,
+    }
+    
   }
 })
