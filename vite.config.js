@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       
-        target: 'verdant-ebg7bvcchea2fgg9.centralindia-01.azurewebsites.net',
+        target: 'https://verdant-ebg7bvcchea2fgg9.centralindia-01.azurewebsites.net',
         changeOrigin: true,
         secure: false,
     }

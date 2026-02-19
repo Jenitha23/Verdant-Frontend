@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": ":path*",
-      "destination": "verdant-ebg7bvcchea2fgg9.centralindia-01.azurewebsites.net:path*"
+      "source": "/:path*",
+      "destination": "https://verdant-ebg7bvcchea2fgg9.centralindia-01.azurewebsites.net/:path*"
     },
     {
       "source": "/(.*)",
