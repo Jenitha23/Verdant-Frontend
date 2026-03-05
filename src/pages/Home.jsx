@@ -35,7 +35,7 @@ const Home = () => {
 
   const handleAddToCart = async (plant) => {
     console.log('Add to cart clicked for plant:', plant);
-    
+
     if (!authService.isAuthenticated()) {
       console.log('User not authenticated, redirecting to login');
       navigate('/login');
@@ -55,7 +55,7 @@ const Home = () => {
       alert(`${plant.name} added to cart!`);
     } catch (err) {
       console.error('Add to cart error details:', err);
-      
+
       if (err.customerId) {
         alert('Please login again to add items to cart');
         authService.logout();
@@ -95,7 +95,8 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* Hero Section - Exactly as in screenshot */}
+
+      {/* ── Hero ── */}
       <section className="hero-section">
         <div className="hero-background">
           <img src="/hero-bg.jpg" alt="Nature background" className="hero-bg-image" />
@@ -117,15 +118,19 @@ const Home = () => {
             </button>
           </div>
         </div>
+        <div className="hero-scroll-hint">
+          <span>scroll</span>
+          <div className="hero-scroll-line"></div>
+        </div>
       </section>
 
-      {/* Shop Section */}
+      {/* ── Shop ── */}
       <section id="shop" className="shop-section">
         <div className="section-header">
+          <span className="section-tag">Our Plants</span>
           <h2 className="section-title">Our Collection</h2>
           <p className="section-subtitle">Discover the perfect plant for your space</p>
         </div>
-
         <div className="plants-grid">
           {plants.map((plant) => (
             <PlantCard
@@ -137,9 +142,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Categories Section */}
+      {/* ── Categories ── */}
       <section id="categories" className="categories-section">
         <div className="section-header">
+          <span className="section-tag">Browse</span>
           <h2 className="section-title">Shop by Category</h2>
           <p className="section-subtitle">Find your perfect plant match</p>
         </div>
@@ -167,19 +173,20 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* ── About ── */}
       <section id="about" className="about-section">
         <div className="about-container">
           <div className="about-content">
-            <h2 className="about-title">Our Story</h2>
+            <span className="section-tag">Our Story</span>
+            <h2 className="about-title">We Live &amp; Breathe Plants</h2>
             <p className="about-text">
-              At Verdant, we believe that plants are more than just decoration—they're living beings that bring joy, 
-              peace, and vitality to our homes and workplaces. Founded in 2020, our mission is to make it easy for 
+              At Verdant, we believe that plants are more than just decoration—they're living beings that bring joy,
+              peace, and vitality to our homes and workplaces. Founded in 2020, our mission is to make it easy for
               everyone to experience the transformative power of plants.
             </p>
             <p className="about-text">
-              We personally visit each nursery to handpick the healthiest, most beautiful plants. Every plant comes 
-              with detailed care instructions and our 30-day happiness guarantee. If your plant doesn't thrive, 
+              We personally visit each nursery to handpick the healthiest, most beautiful plants. Every plant comes
+              with detailed care instructions and our 30-day happiness guarantee. If your plant doesn't thrive,
               we'll replace it or refund your money.
             </p>
             <div className="about-stats">
@@ -197,19 +204,42 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="about-image">
-            <img src="/about-garden.jpg" alt="Our nursery" className="about-img" />
+          <div className="about-collage">
+            <div className="about-collage-main">
+              <img
+                src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80&fit=crop&crop=center"
+                alt="Lush indoor plants"
+                className="about-collage-img"
+              />
+            </div>
+            <div className="about-collage-side">
+              <div className="about-collage-small">
+                <img
+                  src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&q=80&fit=crop&crop=center"
+                  alt="Plant care"
+                  className="about-collage-img"
+                />
+              </div>
+              <div className="about-collage-small">
+                <img
+                  src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=400&q=80&fit=crop&crop=center"
+                  alt="Potted plants"
+                  className="about-collage-img"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* ── Contact ── */}
       <section id="contact" className="contact-section">
         <div className="contact-container">
           <div className="contact-info">
+            <span className="section-tag">Contact</span>
             <h2 className="contact-title">Get in Touch</h2>
             <p className="contact-text">
-              Have questions about plant care? Need help choosing the perfect plant? 
+              Have questions about plant care? Need help choosing the perfect plant?
               We're here to help!
             </p>
             <div className="contact-details">
@@ -239,7 +269,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* ── Footer ── */}
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-logo">
@@ -255,6 +285,7 @@ const Home = () => {
           <p className="copyright">© 2026 Verdant. All rights reserved.</p>
         </div>
       </footer>
+
     </div>
   );
 };

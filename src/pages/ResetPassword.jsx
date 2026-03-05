@@ -21,7 +21,7 @@ const ResetPassword = () => {
     // Extract token from URL query parameters
     const params = new URLSearchParams(location.search);
     const urlToken = params.get('token');
-    
+
     if (urlToken) {
       setToken(urlToken);
       console.log('Reset token found in URL:', urlToken);
@@ -69,11 +69,11 @@ const ResetPassword = () => {
       console.log('Resetting password with token:', token);
       const response = await authService.resetPassword(token, formData.newPassword);
       console.log('Reset password response:', response);
-      
+
       if (response.success) {
         setSuccessMessage(response.message || 'Password reset successful!');
         setSuccess(true);
-        
+
         // Redirect to login after 3 seconds
         setTimeout(() => {
           navigate('/login');
@@ -92,30 +92,38 @@ const ResetPassword = () => {
   // If no token in URL, show error
   if (!tokenValid) {
     return (
-      <div className="reset-password-page">
-        <div className="reset-password-container">
-          <div className="reset-password-header">
-            <Link to="/" className="reset-password-logo">
-              <span className="logo-leaf">🌿</span>
-              <span>Verdant</span>
-            </Link>
-            <h1>Invalid Reset Link</h1>
+      <div className="reset-page">
+        <div className="reset-left">
+          <div className="reset-left-content">
+            <h1 className="reset-brand-title">Welcome to Verdant</h1>
+            <p className="reset-brand-subtitle">
+              Your curated destination for beautiful, sustainably grown houseplants.
+            </p>
           </div>
-          
-          <div className="error-message-large">
-            <div className="error-icon-large">⚠️</div>
-            <h2>Missing Reset Token</h2>
-            <p>The reset link you used doesn't contain a valid token.</p>
-            <p className="error-help">Please request a new password reset link.</p>
-          </div>
+        </div>
 
-          <div className="reset-password-footer">
-            <Link to="/forgot-password" className="back-link">
-              Request New Reset Link
-            </Link>
-            <Link to="/login" className="back-link" style={{ marginTop: 'var(--spacing-sm)' }}>
-              ← Back to Login
-            </Link>
+        <div className="reset-right">
+          <div className="reset-form-wrapper">
+            <div className="reset-form-header">
+              <h2>Invalid Reset Link</h2>
+              <p>Something went wrong with your link</p>
+            </div>
+
+            <div className="reset-invalid">
+              <span className="reset-invalid-icon">⚠️</span>
+              <h3>Missing Reset Token</h3>
+              <p>The reset link you used doesn't contain a valid token.</p>
+              <p className="error-help">Please request a new password reset link.</p>
+            </div>
+
+            <div className="reset-footer">
+              <Link to="/forgot-password" className="reset-back-link primary">
+                Request New Reset Link
+              </Link>
+              <Link to="/login" className="reset-back-link">
+                ← Back to Login
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -123,90 +131,94 @@ const ResetPassword = () => {
   }
 
   return (
-    <div className="reset-password-page">
-      <div className="reset-password-container grow-up">
-        <div className="reset-password-header">
-          <Link to="/" className="reset-password-logo">
-            <span className="logo-leaf">🌿</span>
-            <span>Verdant</span>
-          </Link>
-          <h1>Create New Password</h1>
-          <p>Enter your new password below</p>
-          
-        </div>
+    <div className="reset-page">
 
-        {error && (
-          <div className="error-message">
-            <span className="error-icon">⚠️</span>
-            {error}
-          </div>
-        )}
-
-        {successMessage && (
-          <div className="success-message">
-            <span className="success-icon">✓</span>
-            {successMessage}
-            <p className="redirect-message">Redirecting to login...</p>
-          </div>
-        )}
-
-        {!success ? (
-          <form onSubmit={handleSubmit} className="reset-password-form">
-            <div className="form-group">
-              <label htmlFor="newPassword">New Password</label>
-              <input
-                type="password"
-                id="newPassword"
-                name="newPassword"
-                value={formData.newPassword}
-                onChange={handleChange}
-                required
-                placeholder="Enter new password"
-                className="form-input"
-                disabled={loading}
-                minLength="6"
-              />
-              <small className="input-hint">Minimum 6 characters</small>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="confirmPassword">Confirm Password</label>
-              <input
-                type="password"
-                id="confirmPassword"
-                name="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                required
-                placeholder="Confirm new password"
-                className="form-input"
-                disabled={loading}
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="reset-password-btn"
-              disabled={loading}
-            >
-              {loading ? (
-                <>
-                  <span className="btn-loader">🌱</span>
-                  Resetting...
-                </>
-              ) : (
-                'Reset Password'
-              )}
-            </button>
-          </form>
-        ) : null}
-
-        <div className="reset-password-footer">
-          <Link to="/login" className="back-link">
-            ← Back to Login
-          </Link>
+      {/* ── Left: plant photo panel ── */}
+      <div className="reset-left">
+        <div className="reset-left-content">
+          <h1 className="reset-brand-title">Welcome to Verdant</h1>
+          <p className="reset-brand-subtitle">
+            Your curated destination for beautiful, sustainably grown houseplants. Sign in to track
+            orders, save favorites, and join our growing community.
+          </p>
         </div>
       </div>
+
+      {/* ── Right: form panel ── */}
+      <div className="reset-right">
+        <div className="reset-form-wrapper">
+          <div className="reset-form-header">
+            <h2>Create New Password</h2>
+            <p>Enter your new password below</p>
+          </div>
+
+          {error && (
+            <div className="reset-error">
+              <span>⚠️</span> {error}
+            </div>
+          )}
+
+          {successMessage && (
+            <div className="reset-success">
+              <span>✓ {successMessage}</span>
+              <p className="redirect-message">Redirecting to login...</p>
+            </div>
+          )}
+
+          {!success && (
+            <div className="reset-form">
+              <div className="reset-field">
+                <label htmlFor="newPassword">New Password</label>
+                <input
+                  type="password"
+                  id="newPassword"
+                  name="newPassword"
+                  value={formData.newPassword}
+                  onChange={handleChange}
+                  required
+                  placeholder="Enter new password"
+                  disabled={loading}
+                  minLength="6"
+                />
+                <small className="reset-input-hint">Minimum 6 characters</small>
+              </div>
+
+              <div className="reset-field">
+                <label htmlFor="confirmPassword">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  required
+                  placeholder="Confirm new password"
+                  disabled={loading}
+                />
+              </div>
+
+              <button
+                className="reset-submit-btn"
+                onClick={handleSubmit}
+                disabled={loading}
+              >
+                {loading ? (
+                  <><span>🌱</span> Resetting...</>
+                ) : (
+                  'Reset Password'
+                )}
+              </button>
+            </div>
+          )}
+
+          <div className="reset-footer">
+            <Link to="/login" className="reset-back-link">
+              ← Back to Login
+            </Link>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };

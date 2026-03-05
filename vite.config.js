@@ -6,11 +6,11 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      
-        target: 'https://verdant-ebg7bvcchea2fgg9.centralindia-01.azurewebsites.net',
+      '/api': {
+        target: 'http://localhost:8080',
         changeOrigin: true,
         secure: false,
+      }
     }
-    
   }
 })
